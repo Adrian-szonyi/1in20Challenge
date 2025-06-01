@@ -22,8 +22,8 @@ const Header: React.FC = () => {
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="/images/logo.jpeg"
-            alt="Feel the Magic Logo"
+            src="/1in20Challenge/images/logo.jpeg"
+            alt="1 in 20 Challenge Logo"
             className="h-8 w-auto mr-2"
           />
           

@@ -15,9 +15,9 @@ const VideoSection: React.FC = () => {
         <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl group">
           <div className="aspect-video bg-gray-800 flex items-center justify-center relative overflow-hidden">
             <img 
-              src="/images/frame_2177.jpg"
+              src="/1in20Challenge/images/frame_2177.jpg"
               alt="Video thumbnail" 
-              className="w-full h-auto object-cover rounded-lg"
+              className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
             
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

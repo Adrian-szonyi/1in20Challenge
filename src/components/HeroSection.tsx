@@ -25,9 +25,9 @@ const HeroSection: React.FC = () => {
           <div className="order-1 md:order-2">
             <div className="relative z-10 overflow-hidden rounded-lg transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
               <img 
-                src="/images/Gavinphoto.jpeg" 
+                src="/1in20Challenge/images/Gavinphoto.jpeg" 
                 alt="Children at a Feel the Magic event" 
-                className="w-full h-auto object-cover"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
               />
             </div>
           </div>
