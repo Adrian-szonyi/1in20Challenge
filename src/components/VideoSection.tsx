@@ -19,7 +19,7 @@ const VideoSection: React.FC = () => {
             {!isPlaying ? (
               <>
                 <img 
-                  src="/1in20Challenge/images/frame_2177.jpg"
+                  src="/1in20Challenge/images/frame_12014.jpg"
                   alt="Video thumbnail" 
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                 />
