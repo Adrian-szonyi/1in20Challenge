@@ -36,12 +36,12 @@ const VideoSection: React.FC = () => {
                 </div>
               </>
             ) : (
-              <video 
-                className="w-full h-full object-cover"
-                controls
-                autoPlay
-                playsInline
-                src="/1in20Challenge/images/Gavin Video 1 V01 (1).mp4"
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/b0sn6r6eZ2s?autoplay=1"
+                title="1 in 20 Challenge Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
             )}
           </div>
