@@ -40,7 +40,7 @@ const VideoSection: React.FC = () => {
                 className="w-full h-full object-cover"
                 controls
                 autoPlay
-                src="/1in20Challenge/images/Gavin Video 1 V01.mp4"
+                src="/1in20Challenge/images/Gavin Video 1 V01 (1).mp4"
               />
             )}
           </div>
