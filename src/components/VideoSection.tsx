@@ -1,33 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Play } from 'lucide-react';
 
 const VideoSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handlePlay = () => {
-    setIsLoading(true);
-    setError(null);
-    setIsPlaying(true);
-  };
-
-  const handleVideoError = () => {
-    setError('Failed to load video. Please try again later.');
-    setIsPlaying(false);
-    setIsLoading(false);
-  };
-
-  const handleVideoLoaded = () => {
-    setIsLoading(false);
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        setError('Failed to play video. Please try again.');
-        setIsPlaying(false);
-      });
-    }
-  };
 
   return (
     <section id="video" className="py-16 md:py-24 bg-gray-50">
@@ -50,7 +25,7 @@ const VideoSection: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <button 
-                  onClick={handlePlay}
+                  onClick={() => setIsPlaying(true)}
                   className="absolute z-10 bg-accent-500 hover:bg-accent-400 text-primary-600 rounded-full w-20 h-20 flex items-center justify-center transform transition-all duration-300 group-hover:scale-110"
                 >
                   <Play className="w-10 h-10 fill-current" />
@@ -61,34 +36,13 @@ const VideoSection: React.FC = () => {
                 </div>
               </>
             ) : (
-              <div className="relative w-full h-full">
-                {isLoading && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-accent-500 border-t-transparent"></div>
-                  </div>
-                )}
-                {error && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                    <div className="bg-white p-4 rounded-lg text-red-500 text-center">
-                      {error}
-                      <button 
-                        onClick={() => setIsPlaying(false)}
-                        className="block mt-2 text-sm text-gray-600 hover:text-gray-800"
-                      >
-                        Try Again
-                      </button>
-                    </div>
-                  </div>
-                )}
-                <video 
-                  ref={videoRef}
-                  className="w-full h-full object-cover"
-                  controls
-                  onError={handleVideoError}
-                  onLoadedData={handleVideoLoaded}
-                  src="/1in20Challenge/images/Gavin Video 1 V01 (1).mp4"
-                />
-              </div>
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                autoPlay
+                playsInline
+                src="/1in20Challenge/images/Gavin Video 1 V01 (1).mp4"
+              />
             )}
           </div>
         </div>
