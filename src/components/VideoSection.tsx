@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Play } from 'lucide-react';
 
 const VideoSection: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <section id="video" className="py-16 md:py-24 bg-gray-50">
       <div className="container-custom">
@@ -14,22 +16,33 @@ const VideoSection: React.FC = () => {
         
         <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl group">
           <div className="aspect-video bg-gray-800 flex items-center justify-center relative overflow-hidden">
-            <img 
-              src="/1in20Challenge/images/frame_2177.jpg"
-              alt="Video thumbnail" 
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
-            />
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            
-            <button className="absolute z-10 bg-accent-500 hover:bg-accent-400 text-primary-600 rounded-full w-20 h-20 flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
-              <Play className="w-10 h-10 fill-current" />
-            </button>
-            
-            <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-left">
-              <h3 className="text-xl md:text-2xl font-bold mb-2">The 1 in 20 Challenge: Help Us Reach $250,000</h3>
-              <p className="text-white/80">Watch CEO Gavin explain the challenge and how your donation helps</p>
-            </div>
+            {!isPlaying ? (
+              <>
+                <img 
+                  src="/1in20Challenge/images/frame_2177.jpg"
+                  alt="Video thumbnail" 
+                  className="rounded-lg shadow-lg w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <button 
+                  onClick={() => setIsPlaying(true)}
+                  className="absolute z-10 bg-accent-500 hover:bg-accent-400 text-primary-600 rounded-full w-20 h-20 flex items-center justify-center transform transition-all duration-300 group-hover:scale-110"
+                >
+                  <Play className="w-10 h-10 fill-current" />
+                </button>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">The 1 in 20 Challenge: Help Us Reach $250,000</h3>
+                  <p className="text-white/80">Watch CEO Gavin explain the challenge and how your donation helps</p>
+                </div>
+              </>
+            ) : (
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                autoPlay
+                src="/1in20Challenge/images/Gavin Video 1 V01.mp4"
+              />
+            )}
           </div>
         </div>
         
